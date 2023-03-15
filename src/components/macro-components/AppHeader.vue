@@ -15,9 +15,6 @@
                         <a class="nav-link" href="#">Progetti</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    Navbar text with an inline element
-                </span>
             </div>
         </div>
     </nav>
