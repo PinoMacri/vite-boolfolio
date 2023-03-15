@@ -1,10 +1,11 @@
 <script>
 import axios from "axios";
 import ProjectCard from "./components/projects/ProjectCard.vue";
+import AppHeader from "./components/macro-components/AppHeader.vue"
 const apiBaseUrl = "http://localhost:8000/api";
 export default {
   name: "App",
-  components: { ProjectCard },
+  components: { ProjectCard, AppHeader },
   data: () => ({
     projects: []
   }),
@@ -22,8 +23,11 @@ export default {
 </script>
 
 <template>
-  <main>
-    <ProjectCard :projects="projects" />
+  <AppHeader />
+  <main class="container">
+    <div class="d-flex justify-content-center">
+      <ProjectCard :projects="projects" />
+    </div>
   </main>
 </template>
 
