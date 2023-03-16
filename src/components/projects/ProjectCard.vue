@@ -13,6 +13,8 @@ export default {
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ project.description }}</p>
                 <a :href="project.github" class="btn btn-primary">Git-Hub</a>
+                <router-link class="btn btn-primary ms-3"
+                    :to="{ name: 'project-detail', params: { id: project.id } }">Vedi</router-link>
             </div>
         </div>
     </div>
