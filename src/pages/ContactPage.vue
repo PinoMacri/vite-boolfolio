@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -45,6 +47,17 @@ export default {
                 evento.preventDefault();
                 this.controlloMessaggio = true;
             } else { this.controlloMessaggio = false };
+            axios.post("http://127.0.0.1:8000/api/user/submit-form", {
+                nome: this.nome,
+                email: this.email,
+                messaggio: this.messaggio,
+                newsletter: this.newsletter,
+            }).then(response => {
+                console.log("dati inviati con successo", response.data);
+            }).catch(error => {
+                console.log("errore durante l'invio dei dati", error);
+            });
+
         }
     }
 }
