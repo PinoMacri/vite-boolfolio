@@ -4,7 +4,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <RouterLink to="/" class="navbar-brand">Boolfolio</RouterLink>
+            <RouterLink to="/" class="navbar-brand "><img class="my-pm" src="../../../public/22.png" alt=""></RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,4 +23,13 @@
     </nav>
 </template>
 
-<style></style>
+<style>
+.my-pm {
+    width: 150px;
+}
+
+.navbar {
+    margin-top: 10px;
+    box-shadow: 15px -10px 145px 15px rgb(170, 25, 25), 0 0 1em blue, 0 0 0.2em red;
+}
+</style>

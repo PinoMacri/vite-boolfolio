@@ -64,34 +64,47 @@ export default {
 </script>
 
 <template>
-    <form v-on:submit="invioForm">
-        <!-- Nome -->
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" v-model="nome">
-            <p v-if="inserimentoNome">Devi inserire il nome</p>
-            <p v-if="lunghezzaNome">Il nome deve contenere minimo 2 e massimo 15 caratteri</p>
-            <p v-if="controlloPresenzaNumeri">Il nome non può contenere numeri</p>
-        </div>
-        <!-- Email -->
-        <div>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" v-model="email">
-            <p v-if="controlloChiocciola">La mail deve contenere una chiocciola</p>
-        </div>
-        <!-- Messaggio -->
-        <div>
-            <label for="messaggio">Messaggio</label>
-            <textarea name="messaggio" id="messaggio" cols="30" rows="10" v-model="messaggio"></textarea>
-            <p v-if="controlloMessaggio">Il messaggio deve contenere almeno 15 caratteri</p>
-        </div>
-        <!-- Checkbox -->
-        <div>
-            <label for="newsletter">Iscrivi alla NewsLetter</label>
-            <input type="checkbox" v-model="newsletter" id="newsletter" name="newsletter">
-        </div>
-        <button type="submit">Invia</button>
-    </form>
+    <div class="container">
+        <form v-on:submit="invioForm">
+            <div class="d-flex mb-4 topo">
+                <!-- Nome -->
+                <div class="me-5">
+                    <label for="nome" class="me-2">Nome:</label>
+                    <input type="text" id="nome" name="nome" v-model="nome">
+                    <p v-if="inserimentoNome">Devi inserire il nome</p>
+                    <p v-if="lunghezzaNome">Il nome deve contenere minimo 2 e massimo 15 caratteri</p>
+                    <p v-if="controlloPresenzaNumeri">Il nome non può contenere numeri</p>
+                </div>
+                <!-- Email -->
+                <div>
+                    <label for="email" class="me-2">Email:</label>
+                    <input type="text" id="email" name="email" v-model="email">
+                    <p v-if="controlloChiocciola">La mail deve contenere una chiocciola</p>
+                </div>
+            </div>
+
+
+            <!-- Messaggio -->
+            <div class="mb-3">
+                <label class="d-block mb-2" for="messaggio">Messaggio: </label>
+                <textarea name="messaggio" id="messaggio" cols="30" rows="10" v-model="messaggio"></textarea>
+                <p v-if="controlloMessaggio">Il messaggio deve contenere almeno 15 caratteri</p>
+            </div>
+            <!-- Checkbox -->
+            <div>
+                <label for="newsletter" class="mb-3 me-3">Iscrivi alla NewsLetter</label>
+                <input type="checkbox" v-model="newsletter" id="newsletter" name="newsletter">
+            </div>
+            <button type="submit" class="btn btn-success">Invia</button>
+        </form>
+    </div>
 </template>
+
+<style lang="scss" scoped>
+input,
+textarea {
+    border-radius: 10px;
+}
+</style>
   
   
